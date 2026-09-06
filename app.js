@@ -57,7 +57,7 @@ function renderRecommendations() {
   const visible = state.showAll || query ? filtered : filtered.slice(0, 6);
   count.textContent = `${state.recommendations.length} 間`;
   if (!visible.length) {
-    list.innerHTML = `<div class="empty-result">${state.recommendations.length ? '目前找不到相符店家，可以放心推薦。' : '還沒有人推薦，等你分享第一間好店！'}</div>`;
+    list.innerHTML = `<div class="empty-result">${state.recommendations.length ? '目前找不到相符店家，可以放心推薦。' : '還沒有人推薦，等您分享第一間好店！'}</div>`;
   } else {
     list.innerHTML = visible.map((item) => `<article class="shop-card"><span class="shop-category">${escapeHtml(item.category)}</span><div><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml(item.phone || '尚未提供電話')}</p></div></article>`).join('');
   }
