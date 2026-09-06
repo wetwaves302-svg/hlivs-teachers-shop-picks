@@ -1,4 +1,3 @@
-/opt/homebrew/Library/Homebrew/cmd/shellenv.sh: line 18: /bin/ps: Operation not permitted
 const API_URL = 'https://hlivs-teachers-shop-picks.lailaifamily.chatgpt.site/api/recommendations';
 const categories = ['食', '衣', '住', '行', '育', '樂'];
 
