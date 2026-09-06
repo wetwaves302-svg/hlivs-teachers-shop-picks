@@ -1,0 +1,78 @@
+/opt/homebrew/Library/Homebrew/cmd/shellenv.sh: line 18: /bin/ps: Operation not permitted
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="推薦花蓮地區好店，由花蓮高工教師會彙整並爭取會員優惠。" />
+    <meta name="theme-color" content="#14766f" />
+    <title>花蓮高工教師會｜會員好店推薦</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell" id="app">
+      <header class="site-header">
+        <div class="brand-mark">花工</div>
+        <div class="brand-copy"><strong>花蓮高工教師會</strong><span>會員好店推薦</span></div>
+      </header>
+
+      <div class="content-grid">
+        <section class="form-column" aria-labelledby="page-title">
+          <div class="intro">
+            <p class="eyebrow">✦ 一起找出花蓮好店</p>
+            <h1 id="page-title">你推薦，我們來爭取會員優惠</h1>
+            <p class="intro-copy">分享你在花蓮常去的店家。理事長彙整後，將請學校人事室協助接洽；合作成功再與會員共享。</p>
+            <div class="privacy-note">✓ 不用登入，也不會詢問你的姓名</div>
+          </div>
+
+          <form class="recommendation-form" id="recommendation-form">
+            <fieldset class="field-block">
+              <legend><span>1</span> 店家屬於哪一類？ <em>必填</em></legend>
+              <div class="category-grid" id="category-grid" role="radiogroup" aria-label="店家類別"></div>
+              <p class="field-help">食、衣、住、行、育、樂，請選一項最符合的類別。</p>
+            </fieldset>
+
+            <div class="field-block">
+              <label for="shop-name"><span>2</span> 店家完整名稱 <em>必填</em></label>
+              <div class="input-wrap"><span aria-hidden="true">⌂</span><input id="shop-name" maxlength="100" placeholder="例如：○○咖啡館 花蓮店" autocomplete="organization" required /></div>
+              <div id="duplicate-message" aria-live="polite"></div>
+              <p class="field-help" id="shop-help">請寫分店名稱，能幫助我們避免找錯店家。</p>
+            </div>
+
+            <div class="field-block">
+              <label for="phone"><span>3</span> 店家電話 <small>選填，但很有幫助</small></label>
+              <div class="input-wrap"><span aria-hidden="true">☎</span><input id="phone" type="tel" inputmode="tel" maxlength="30" placeholder="例如：03-123-4567" autocomplete="tel" /></div>
+            </div>
+
+            <p class="form-error" id="form-error" role="alert"></p>
+            <button class="primary-button" id="submit-button" type="submit" disabled>送出推薦 <span aria-hidden="true">→</span></button>
+            <p class="submit-note">送出前請再次確認店家名稱，送出後由理事長統一管理。</p>
+          </form>
+        </section>
+
+        <aside class="recommendations-panel" aria-labelledby="existing-title">
+          <div class="panel-heading"><div><p class="eyebrow">大家已推薦</p><h2 id="existing-title">先看看有沒有這間</h2></div><span class="count-badge" id="count-badge">0 間</span></div>
+          <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" placeholder="搜尋店名或輸入類別" aria-label="搜尋已推薦店家" /></div>
+          <div class="shop-list" id="shop-list" aria-live="polite"><div class="empty-result">正在讀取推薦名單…</div></div>
+          <button class="panel-more" id="panel-more" type="button" hidden>查看全部</button>
+        </aside>
+      </div>
+      <footer>花蓮高工教師會 ・ 讓每一份推薦，成為大家的會員福利</footer>
+    </main>
+
+    <template id="success-template">
+      <main class="success-shell">
+        <section class="success-card" aria-labelledby="success-title">
+          <div class="success-mark">✓</div>
+          <p class="eyebrow">推薦已收到</p>
+          <h1 id="success-title">謝謝你，一起讓會員福利更貼近日常！</h1>
+          <p>理事長將彙整推薦名單，再請學校人事室協助接洽優惠。成功合作的店家，會再分享給所有會員使用。</p>
+          <div class="submitted-shop" id="submitted-shop"></div>
+          <button class="primary-button" id="recommend-another" type="button">再推薦一間店</button>
+        </section>
+      </main>
+    </template>
+    <script src="app.js" defer></script>
+  </body>
+</html>
